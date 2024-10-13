@@ -21,7 +21,7 @@ const Navbar = () => {
     return (
         <div className='w-full text-xl text-white p-2  sm:p-4 flex justify-between md:w-[90%] lg:w-[80%] items-center'>
             {/* Logo  */}
-            <div className='left'><img src={Logo} className='sm:w-60 w-[10rem] md:w-[15rem]' /></div>
+            <div className='left'><img src={Logo} alt="Logo" className='sm:w-60 w-[10rem] md:w-[15rem]' /></div>
 
 
 
@@ -37,15 +37,18 @@ const Navbar = () => {
                 </div>
                 <div className=' flex justify-center items-center gap-3'>
                     <MdInstallMobile className='sm:hidden' />
-                    <LiaHeadsetSolid />
-                    <span className='hidden sm:inline-block'>
+                    <div onClick={toggleHelpPopup} className='flex justify-center gap-1'>
+                     <LiaHeadsetSolid className='hover:cursor-pointer'/>
+                      <span className='hidden sm:inline-block'>
                         <button
-                            onClick={toggleHelpPopup}
+                            
                             className="text-white hover:text-gray-30 flex items-center"
                         >
                             Help <IoIosArrowUp />
                         </button>
                     </span>
+                    </div>
+                    
                 </div>
 
                 <div>
@@ -58,23 +61,23 @@ const Navbar = () => {
                 </div>
                 {/* Help Popup */}
                 {showHelpPopup && (
-                    <div className="absolute right-0 top-16 bg-white border p-4  text-black rounded-lg shadow-lg">
-                        <div className="w-[400px] h-[300px] ">
-                            <div className="hover:border-2 border-black p-2">
+                    <div className="absolute right-0 top-16 bg-rose-600 border p-4  text-black rounded-lg shadow-lg z-10">
+                        <div className="w-[350px] h-[250px] ">
+                            <div className="hover:border-2 border-black p-2 rounded-2xl">
 
                                 <h2 className="text-lg font-semibold">Raise Ticket</h2>
                                 <p className="mt-2 text-sm">Raise ticket for your complain and your problem get solved in 48 hours</p>
                             </div>
 
-                            <div className="hover:border-2 border-black p-1">
-                                <h2 className="text-lg font-semibold">Contact Us</h2>
-                                <p className="mt-2 text-sm">Mail us about your complaint and we will get back to you in 48 hours </p>
+                            <div className="hover:border-2 border-black p-1 rounded-2xl">
+                                <h2 className="text-lg font-semibold">Appointment</h2>
+                                <p className="mt-2 text-sm">Email us about your appointment and we will will responsd within 48 hours </p>
 
                             </div>
 
-                            <div className="hover:border-2 border-black p-1">
-                                <h2 className="text-lg font-semibold">Emergency</h2>
-                                <p className="mt-2 text-sm">Emergency complaint on Whatsapp for any Harassment or fraud reports. Quick actions would be taken within 12 hrs.</p>
+                            <div className="hover:border-2 border-black p-1 rounded-2xl">
+                                <h2 className="text-lg font-semibold">Contact us</h2>
+                                <p className="mt-2 text-sm">Mail us about your Complaint and we will get back to you within 48 hours. support@sukhvivah.com</p>
 
                             </div>
 
@@ -82,7 +85,7 @@ const Navbar = () => {
 
                         <button
                             onClick={toggleHelpPopup}
-                            className="mt-4 text-blue-500 hover:underline"
+                            className="mt-4 text-blue-500 hover:underline pt-5"
                         >
                             Close
                         </button>

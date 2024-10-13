@@ -1,45 +1,48 @@
-// src/components/Login.js
+
 import React from "react";
-import { FaGoogle, FaFacebook, FaYahoo } from "react-icons/fa"; // Importing icons for social login buttons
+import { BiLogoGmail } from "react-icons/bi";
+import logo1 from "../images/finalLogo.gif"
+import { FaGoogle, FaFacebook, FaYahoo, FaTwitter } from "react-icons/fa"; // Importing icons for social login buttons
 
 const Login = ({ setShowLogin }) => {
     return (
-        <div className="bg-neutral-800   h-full p-10 rounded-lg shadow-md max-w-md mx-auto relative ">
+        <div className="bg-white text-black  sm:w-screen h-full  px-5 rounded-lg shadow-md max-w-md mx-auto relative ">
             {/* Close Button */}
             <button
-                className="absolute ttop-2 right-4 text-gray-400 hover:text-gray-600"
+                className="absolute top-2 right-4 text-gray-400 hover:text-gray-600"
                 onClick={() => setShowLogin(false)}
             >
                 &times;
             </button>
 
             {/* Logo and Welcome Heading */}
-            <div className="text-center md:mb-6">
-                <h2 className="text-white text-xl md:text-2xl mb-4">Welcome To Sukhvivah! ❤️</h2>
+            <div className="text-center pb-2 flex flex-col items-center justify-center md:mb-6">
+                <img className="h-20 w-30 items-center justify-center" src={logo1} />
+                <h2 className="lg:text-3xl  md:text-lg "><b>Welcome To Sukhvivah!</b> ❤️</h2>
             </div>
 
             {/* Form Section */}
-            <form>
-                <div className="mb-4">
-                    <label className="text-white block mb-2">Mobile No. / Email Id *</label>
+            <form className="lg:px-4">
+                <div className="mb-4 ">
+                    <label className="block mb-2 text-sm pt-1">Mobile No. / Email Id *</label>
                     <div className="relative">
                         <input
                             type="text"
-                            className="p-2 rounded-lg w-full text-black"
+                            className="text-sm rounded-lg w-full p-2 text-black border-black border-2 h-9"
                             placeholder="Enter your Mobile No. / Email Id"
                         />
-                        <span className="absolute inset-y-0 right-3 flex items-center text-gray-400">
-                            <i className="far fa-envelope"></i> {/* Email/Mobile icon */}
-                        </span>
+                        {/* <span className="absolute inset-y-0 right-3 flex items-center text-gray-400">
+                <i className="far fa-envelope"></i> 
+                </span> */}
                     </div>
                 </div>
 
-                <div className="mb-4">
-                    <label className="text-white block mb-2">Password *</label>
+                <div className="mb-2">
+                    <label className="block mb-1 text-sm">Password *</label>
                     <div className="relative">
                         <input
                             type="password"
-                            className="p-2 rounded-lg w-full text-black"
+                            className="p-2 rounded-lg w-full text-sm border-black border-2 text-black"
                             placeholder="Enter your Password"
                         />
                         <span className="absolute inset-y-0 right-3 flex items-center text-gray-400">
@@ -50,7 +53,7 @@ const Login = ({ setShowLogin }) => {
 
                 {/* Remember Me and Forgot Password Links */}
                 <div className="flex items-center justify-between mb-6">
-                    <label className="flex items-center text-white">
+                    <label className="flex items-center">
                         <input type="checkbox" className="form-checkbox text-pink-500" />
                         <span className="ml-2 text-sm">Remember me</span>
                     </label>
@@ -60,33 +63,42 @@ const Login = ({ setShowLogin }) => {
                 {/* Login Button */}
                 <button
                     type="submit"
-                    className="w-full bg-blue-500 hover:bg-blue-700 text-white p-2 rounded-lg"
+                    className="w-full bg-pink-500 hover:bg-pink-500 p-2 rounded-lg"
                 >
                     Login
                 </button>
 
                 {/* OR Divider */}
-                <div className="flex items-center my-6">
+                <div className="flex items-center my-2">
                     <hr className="flex-grow border-gray-300" />
                     <span className="mx-3 text-gray-400">OR</span>
                     <hr className="flex-grow border-gray-300" />
                 </div>
 
                 {/* Social Login Buttons */}
-                <div className="flex justify-around mb-6">
-                    <button className="flex items-center justify-center w-12 h-12 bg-white border border-gray-300 rounded-full hover:shadow-md">
-                        <FaGoogle className="text-red-500" />
-                    </button>
+                <div className="flex justify-evenly mb-3 gap-1 mx-auto ">
                     <button className="flex items-center justify-center w-12 h-12 bg-white border border-gray-300 rounded-full hover:shadow-md">
                         <FaFacebook className="text-blue-500" />
                     </button>
+                    <button className="flex items-center justify-center w-12 h-12 bg-white border border-gray-300 rounded-full hover:shadow-md">
+                        <FaTwitter className="text-orange-500" />
+                    </button>
+                    <button className="flex items-center justify-center w-12 h-12 bg-white border border-gray-300 rounded-full hover:shadow-md">
+                        <BiLogoGmail className="text-green-500" />
+                    </button>
+
+
+                    <button className="flex items-center justify-center w-12 h-12 bg-white border border-gray-300 rounded-full hover:shadow-md">
+                        <FaGoogle className="text-red-500" />
+                    </button>
+
                     <button className="flex items-center justify-center w-12 h-12 bg-white border border-gray-300 rounded-full hover:shadow-md">
                         <FaYahoo className="text-purple-500" />
                     </button>
                 </div>
 
                 {/* Login with OTP Button */}
-                <div className="text-center mb-6">
+                <div className="text-center mb-3">
                     <button
                         type="button"
                         className="w-full bg-pink-500 hover:bg-pink-700 text-white py-2 rounded-lg transition duration-200"
@@ -96,8 +108,8 @@ const Login = ({ setShowLogin }) => {
                 </div>
 
                 {/* Signup Link */}
-                <div className="text-center">
-                    <p className="text-white text-sm">
+                <div className="text-center ">
+                    <p className="text-black text-sm pr-3">
                         New to Sukhvivah?{" "}
                         <a href="#" className="text-pink-500 font-bold">Sign Up</a>
                     </p>
