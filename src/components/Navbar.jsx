@@ -61,7 +61,7 @@ const Navbar = () => {
                 </div>
                 {/* Help Popup */}
                 {showHelpPopup && (
-                    <div className="absolute right-0 top-16 bg-rose-600 border p-4  text-black rounded-lg shadow-lg z-10">
+                    <div className="absolute right-5 top-[100px] font-serif bg-rose-600 border p-4  text-black rounded-lg shadow-lg z-10">
                         <div className="w-[350px] h-[250px] ">
                             <div className="hover:border-2 border-black p-2 rounded-2xl">
 
